@@ -125,7 +125,7 @@ function Server:sendUpdatesToClients()
 
     -- Collect updates per map
     for id, player in pairs(self.players) do
-        if player.client and player.state == "world" then
+        if player.client then
             if player.party_number then
                 player.party_number = nil
             end
@@ -156,7 +156,9 @@ function Server:sendUpdatesToClients()
             local filteredUpdates = {}
             for _, update in ipairs(updates[player.map]) do
                 if update.uuid ~= id then
-                    table.insert(filteredUpdates, update)
+                    if update.state == self.players[id].state then
+                        table.insert(filteredUpdates, update)
+                    end
                 end
             end
 
