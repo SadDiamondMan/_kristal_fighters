@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="60">
+ <editorsettings>
+  <export target="platform_test.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="name" value="Platform Test"/>
+ </properties>
+ <tileset firstgid="1" source="../tilesets/castle.tsx"/>
+ <layer id="1" name="tiles" width="60" height="20">
+  <data encoding="csv">
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,0,
+0,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,0,
+0,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,0,
+0,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,0,
+0,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,0,
+0,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,0
+</data>
+ </layer>
+ <layer id="2" name="floors_castle" width="60" height="20" opacity="0.65">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,8,9,9,9,9,9,9,10,0,0,8,9,9,9,9,9,10,0,0,0,8,9,9,9,9,9,9,9,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,14,15,15,15,15,15,15,16,0,0,14,15,15,15,15,15,16,0,0,0,14,15,15,15,15,15,15,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,20,21,21,21,21,21,21,22,0,0,20,21,21,21,21,21,22,0,0,0,20,21,21,21,21,21,21,21,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,9,9,9,9,9,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,15,15,15,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,21,21,21,21,21,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="6" name="walls_castle" width="60" height="20" opacity="0.65">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,14,15,15,15,15,15,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,20,21,21,21,21,21,21,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,15,15,15,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,21,21,21,21,21,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#0000ff" id="3" name="collision" opacity="0.5">
+  <object id="1" x="400" y="280" width="80" height="160"/>
+  <object id="2" x="0" y="0" width="80" height="800"/>
+  <object id="3" x="2360" y="0" width="40" height="800"/>
+  <object id="9" x="80" y="-200" width="2280" height="480"/>
+  <object id="10" x="0" y="760" width="2400" height="40"/>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="4" name="markers">
+  <object id="4" name="spawn" x="180" y="320">
+   <point/>
+  </object>
+  <object id="36" name="section_original_statue_floortex_actions" x="240" y="240">
+   <point/>
+  </object>
+  <object id="37" name="section_physics_slopes" x="1500" y="540">
+   <point/>
+  </object>
+  <object id="38" name="section_physics_ground_effects" x="1500" y="680">
+   <point/>
+  </object>
+  <object id="39" name="section_physics_moving_floor" x="2040" y="460">
+   <point/>
+  </object>
+  <object id="40" name="section_physics_moving_block" x="2260" y="400">
+   <point/>
+  </object>
+  <object id="41" name="section_moving_floortex" x="520" y="300">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="5" name="objects">
+  <object id="5" name="platform_statue" x="240" y="280" width="40" height="80"/>
+  <object id="6" name="platform_floortex_floor" x="80" y="320" width="320" height="120">
+   <properties>
+    <property name="yorigin_id" value="floor_low"/>
+   </properties>
+  </object>
+  <object id="8" name="platform_block" x="400" y="280" width="40" height="40"/>
+  <object id="11" name="platform_floortex_yorigin" x="80" y="400" width="320" height="2">
+   <properties>
+    <property name="id" value="floor_low"/>
+   </properties>
+  </object>
+  <object id="12" name="platform_floortex_yplat" x="80" y="396" width="320" height="8">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+    <property name="yorigin_id" value="floor_low"/>
+   </properties>
+  </object>
+  <object id="13" name="platform_floortex_front" x="80" y="400" width="320" height="40">
+   <properties>
+    <property name="source_height" type="float" value="40"/>
+    <property name="source_prefix" value="walls_"/>
+    <property name="source_width" type="float" value="320"/>
+    <property name="source_x" type="float" value="80"/>
+    <property name="source_y" type="float" value="400"/>
+    <property name="yorigin_id" value="floor_low"/>
+   </properties>
+  </object>
+  <object id="14" name="platform_floor" x="840" y="280" width="240" height="40"/>
+  <object id="15" name="platform_floor" x="1120" y="220" width="280" height="40"/>
+  <object id="16" name="platform_block" x="760" y="320" width="40" height="80"/>
+  <object id="17" name="platform_action_target" x="920" y="220" width="40" height="40">
+   <properties>
+    <property name="action" value="susie"/>
+    <property name="description" value="Susie target test"/>
+    <property name="objectname" value="TEST ROCK"/>
+    <property name="quick_attack" type="bool" value="true"/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="18" name="platform_action_target" x="1210" y="160" width="40" height="40">
+   <properties>
+    <property name="action" value="ralsei"/>
+    <property name="description" value="Ralsei target test"/>
+    <property name="objectname" value="TEST GAP"/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="19" name="platform_action_target" x="1320" y="320" width="40" height="80">
+   <properties>
+    <property name="action" value="none"/>
+    <property name="closet" type="bool" value="true"/>
+    <property name="description" value="Menu gate test"/>
+    <property name="menu_margin" type="float" value="36"/>
+    <property name="objectname" value="TEST CLOSET"/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="22" name="platform_action_target" x="1040" y="80" width="40" height="40">
+   <properties>
+    <property name="action" value="ralsei"/>
+    <property name="description" value="Ralsei platform test"/>
+    <property name="hang_xoffset" type="float" value="20"/>
+    <property name="hang_yoffset" type="float" value="22"/>
+    <property name="objectname" value="TEST HANG"/>
+    <property name="platform_action" type="bool" value="true"/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="23" name="platform_action_target" x="700" y="200" width="40" height="40">
+   <properties>
+    <property name="action" value="flowery"/>
+    <property name="description" value="JARONA!"/>
+    <property name="objectname" value="RAINBOW PUNCHING BAG"/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="24" name="platform_action_target" x="820" y="120" width="40" height="40">
+   <properties>
+    <property name="action" value="flowery_omega"/>
+    <property name="description" value="WITH OUR POWERS COMBINED"/>
+    <property name="objectname" value="OMEGA FLOWERY TEST"/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="25" name="roaring_knight_test" x="1160" y="44" width="200" height="176">
+   <properties>
+    <property name="flowery_dialogue" value="* Sorry about that, guys."/>
+    <property name="flowery_dialogue_actor" value="flowery"/>
+    <property name="flowery_dialogue_bottom" type="bool" value="true"/>
+    <property name="flowery_dialogue_face" value="spr_face_flowery_1"/>
+    <property name="flowery_voice" value="flowery/voiceclips/sorryaboutthatguys"/>
+    <property name="target_id" type="float" value="26"/>
+   </properties>
+  </object>
+  <object id="26" name="platform_action_target" x="1240" y="112" width="40" height="40">
+   <properties>
+    <property name="action" value="flowery"/>
+    <property name="description" value="JARONA!"/>
+    <property name="objectname" value="ROARING KNIGHT"/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="27" name="platform_floortex_auto" x="480" y="320" width="280" height="120">
+   <properties>
+    <property name="front" type="bool" value="true"/>
+    <property name="front_height" type="float" value="40"/>
+    <property name="front_prefix" value="walls_"/>
+    <property name="front_source_height" type="float" value="40"/>
+    <property name="front_source_width" type="float" value="320"/>
+    <property name="front_source_x" type="float" value="80"/>
+    <property name="front_source_y" type="float" value="400"/>
+    <property name="id" value="floor_auto"/>
+    <property name="move_amp" type="float" value="50"/>
+    <property name="move_axis" value="x"/>
+    <property name="move_freq" type="float" value="0.0825"/>
+    <property name="moving_platform" type="bool" value="true"/>
+    <property name="rideable" type="bool" value="true"/>
+    <property name="y_plat" type="float" value="396"/>
+    <property name="yorigin" type="float" value="80"/>
+   </properties>
+  </object>
+  <object id="28" name="platform_floor" x="1520" y="600" width="160" height="120">
+   <properties>
+    <property name="slope" type="bool" value="true"/>
+    <property name="slope_x1" type="float" value="0"/>
+    <property name="slope_x2" type="float" value="160"/>
+    <property name="slope_y1" type="float" value="120"/>
+    <property name="slope_y2" type="float" value="40"/>
+   </properties>
+   <polygon points="0,120 160,40 160,120"/>
+  </object>
+  <object id="29" name="platform_floor" x="1680" y="600" width="160" height="120">
+   <properties>
+    <property name="slope" type="bool" value="true"/>
+    <property name="slope_x1" type="float" value="0"/>
+    <property name="slope_x2" type="float" value="160"/>
+    <property name="slope_y1" type="float" value="40"/>
+    <property name="slope_y2" type="float" value="120"/>
+   </properties>
+   <polygon points="0,40 160,120 0,120"/>
+  </object>
+  <object id="30" name="platform_floor" x="1840" y="640" width="180" height="140">
+   <properties>
+    <property name="plattype" type="float" value="1"/>
+    <property name="slope" type="bool" value="true"/>
+    <property name="slope_x1" type="float" value="0"/>
+    <property name="slope_x2" type="float" value="180"/>
+    <property name="slope_y1" type="float" value="0"/>
+    <property name="slope_y2" type="float" value="60"/>
+   </properties>
+   <polygon points="0,-70 180,-70 180,80 0,80"/>
+  </object>
+  <object id="31" name="platform_floor" x="1520" y="480" width="160" height="20">
+   <properties>
+    <property name="conveyor_hspeed" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="32" name="platform_floor" x="1680" y="480" width="140" height="20">
+   <properties>
+    <property name="quicksand" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="33" name="platform_floor" x="2040" y="500" width="100" height="16">
+   <properties>
+    <property name="move_amp" type="float" value="50"/>
+    <property name="move_axis" value="x"/>
+    <property name="move_freq" type="float" value="0.0825"/>
+    <property name="moving_platform" type="bool" value="true"/>
+    <property name="rideable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="34" name="platform_block" x="2260" y="440" width="40" height="40">
+   <properties>
+    <property name="move_amp" type="float" value="40"/>
+    <property name="move_axis" value="y"/>
+    <property name="move_freq" type="float" value="0.08"/>
+    <property name="moving_platform" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="35" name="platform_floor" x="1420" y="720" width="900" height="20"/>
+  <object id="42" name="platform_talk" x="1440" y="660" width="40" height="40">
+   <properties>
+    <property name="text" value="* Platform dialogue test./* Bottom-zone placement test."/>
+    <property name="visible" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="43" name="platform_text_at_bottom_zone" x="987.5" y="587" width="360" height="160"/>
+  <object id="44" name="platform_block" x="1400" y="440" width="40" height="80"/>
+  <object id="45" name="platform_floor" x="2120" y="560" width="180" height="20"/>
+  <object id="46" name="platform_slashpusher" x="1880" y="480" width="40" height="40">
+   <properties>
+    <property name="platform_angle" type="float" value="90"/>
+   </properties>
+  </object>
+  <object id="47" name="platform_slashpusher" x="1980" y="460" width="40" height="40">
+   <properties>
+    <property name="index" type="float" value="1"/>
+    <property name="platform_angle" type="float" value="45"/>
+   </properties>
+  </object>
+  <object id="48" name="platform_bounce_flower" x="2180" y="440" width="40" height="40">
+   <properties>
+    <property name="directional" type="bool" value="true"/>
+    <property name="index" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="49" name="platform_slashpusher_anchor" x="1880" y="520" width="40" height="20">
+   <properties>
+    <property name="index" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="50" name="platform_slashpusher_anchor" x="1980" y="520" width="40" height="20">
+   <properties>
+    <property name="index" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="51" name="platform_slashpusher_anchor" x="2180" y="500" width="40" height="20">
+   <properties>
+    <property name="index" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="52" name="platform_slashpusher" x="2260" y="360" width="40" height="40">
+   <properties>
+    <property name="closed" type="bool" value="true"/>
+    <property name="index" type="float" value="3"/>
+    <property name="objectname" value="CLOSED FLOWER"/>
+    <property name="platform_angle" type="float" value="90"/>
+   </properties>
+  </object>
+  <object id="53" name="platform_slashpusher_anchor" x="2260" y="420" width="40" height="20">
+   <properties>
+    <property name="index" type="float" value="3"/>
+   </properties>
+  </object>
+  <object id="54" name="platform_slashpusher" x="2060" y="470" width="40" height="40">
+   <properties>
+    <property name="continuous_duration" type="float" value="45"/>
+    <property name="continuous_mode" type="bool" value="true"/>
+    <property name="continuous_speed" type="float" value="1.5"/>
+    <property name="index" type="float" value="4"/>
+    <property name="move_mode" type="bool" value="true"/>
+    <property name="platform_angle" type="float" value="110"/>
+   </properties>
+  </object>
+  <object id="55" name="platform_slashpusher_anchor" x="2060" y="530" width="40" height="20">
+   <properties>
+    <property name="index" type="float" value="4"/>
+   </properties>
+  </object>
+  <object id="56" name="platform_slashpusher" x="2360" y="380" width="40" height="40">
+   <properties>
+    <property name="index" type="float" value="5"/>
+    <property name="pendulum_angle" type="float" value="28"/>
+    <property name="pendulum_freq" type="float" value="0.045"/>
+    <property name="platform_angle" type="float" value="125"/>
+    <property name="stem_ease_x" value="inOutBack"/>
+    <property name="stem_ease_y" value="linear"/>
+   </properties>
+  </object>
+  <object id="57" name="platform_slashpusher_anchor" x="2360" y="520" width="40" height="20">
+   <properties>
+    <property name="index" type="float" value="5"/>
+   </properties>
+  </object>
+  <object id="58" name="platform_torii_gate" x="1520" y="530" width="53" height="190"/>
+  <object id="59" name="platform_torii_gate" x="2040" y="530" width="53" height="190"/>
+ </objectgroup>
+</map>
