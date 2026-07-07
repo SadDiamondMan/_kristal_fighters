@@ -305,11 +305,9 @@ function Lib:updateWorld(...)
     if currentTime - lastUpdateTime >= THROTTLE_INTERVAL then
         local sprite_val = "party/kris/platform/idle_1"
 
-        if player.sprite.anim then
-            sprite_val = player.sprite.anim
-        elseif Game.world.player.state == "FEATHERFALL" then
+        if Game.world.player.state == "FEATHERFALL" then
             sprite_val = "" ..Game.world.player.sprite.sprite.. "_" ..Game.world.player.sprite.frame.. ""
-        elseif Game.world.player.state ~= "FEATHERFALL" then
+        elseif player.sprite.sprite_options[1] then
             sprite_val = player.sprite.sprite_options[1]
         end
 
@@ -317,8 +315,8 @@ function Lib:updateWorld(...)
             command = "world",
             subCommand = "update",
             username = self.name,
-            x = player.x,
-            y = player.y,
+            x = math.floor(player.x),
+            y = math.floor(player.y),
             map = (Mod.info.id..":"..Game.world.map.id) or "null",
             actor = player.actor.id,
             sprite = sprite_val,
