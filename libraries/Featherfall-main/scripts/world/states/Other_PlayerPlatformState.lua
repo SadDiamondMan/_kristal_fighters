@@ -1459,9 +1459,9 @@ function PlayerPlatformState:startAttack()
 end
 
 function PlayerPlatformState:updateAttackInput()
-    if Input.pressed("confirm") then
-        self.attack_press_timer = 1
-    end
+    --if Input.pressed("confirm") then --sync this
+        --self.attack_press_timer = 1
+    --end
     self.press_attack = self.attack_press_timer > 0
     self.key_attack = Input.down("confirm")
     self.attackbuffer = math.max(0, self.attackbuffer - DTMULT)
@@ -2266,6 +2266,7 @@ function PlayerPlatformState:onUpdate()
     self:updateJumpHover(press_jump, key_jump, key_left, key_right, key_up, key_down)
     self:updateHeartDanger()
 
+--[[
     if self.hurt then
         self:setPlayerAnimation(self:getHurtAnimationName())
     elseif self.attacking or self.attack_end_visible then
@@ -2286,9 +2287,10 @@ function PlayerPlatformState:onUpdate()
         self:setPlayerAnimation("run")
     elseif key_down and self:getPlatformAnimation("crouch") then
         self:setPlayerAnimation("crouch")
-    else
+    elseif
         self:setPlayerAnimation("idle")
     end
+]]
 
     self.attack_press_timer = MathUtils.approach(self.attack_press_timer, 0, DTMULT)
     self.attack_end_visible = false
@@ -2369,7 +2371,7 @@ function PlayerPlatformState:getPlatformAnimation(name)
     end
 end
 
-function PlayerPlatformState:getPlatformFlipX()
+--[[function PlayerPlatformState:getPlatformFlipX()
     local actor = self:getPlatformActor()
     local facing = self.player:getFacing() or "right"
     self.facing = self.player:getFacing()
@@ -2378,9 +2380,8 @@ function PlayerPlatformState:getPlatformFlipX()
     end
 
     local data = actor and actor.platform
-    self.current_animation = self.player.sprite.sprite
     local animation = self.current_animation and self:getPlatformAnimation(self.current_animation)
-    local flip_x = facing == "left"
+    local flip_x = facing --== "left"
     if animation and animation.invert_flip ~= nil then
         return animation.invert_flip and not flip_x or flip_x
     end
@@ -2388,7 +2389,7 @@ function PlayerPlatformState:getPlatformFlipX()
         return not flip_x
     end
     return flip_x
-end
+end]]
 
 
 return PlayerPlatformState

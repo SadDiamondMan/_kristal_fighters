@@ -582,10 +582,11 @@ function Lib:parseServerData(data)
 
                         local needs_update = ((Pspr.anim and Pspr.anim ~= dat) or (not Pspr.anim and Pspr.sprite_options[1] ~= dat)) and dat
 
-                        if needs_update then
-                          --  other_player:setSprite(dat)
-                        --else
-                            other_player.sprite:setTexture(dat)
+                        if needs_update and Game.world.player.state == "WALK" then
+                          other_player:setSprite(dat)
+                        else
+                            other_player.platform_state.facing = playerData.facing
+                            other_player.platform_state:setPlayerAnimation(dat) --sprite:setTexture(dat)
                         end
 
                         if playerData.cust then --Sync custom data
