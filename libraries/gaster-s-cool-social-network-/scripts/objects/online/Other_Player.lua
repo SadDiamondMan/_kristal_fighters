@@ -2,6 +2,8 @@
 ---@overload fun(...) : Other_Player
 local Other_Player, super = Class(Character)
 
+local PlayerPlatformState = libRequire("featherfall", "scripts.world.states.Other_PlayerPlatformState")
+
 function Other_Player:init(chara, x, y, name, uuid)
     super.init(self, chara, x, y)
     self.name = name
@@ -15,12 +17,26 @@ function Other_Player:init(chara, x, y, name, uuid)
     self.nametag = UserNametag(self, self.name)
     self:addChild(self.nametag)
 
-    --self.platform_state = PlayerPlatformState(self)
-    --self.state_manager:addState("FEATHERFALL", self.platform_state)
+    self.state_manager = StateManager("WALK", self, true)
+
+    self.platform_state = PlayerPlatformState(self)
+    self.state_manager:addState("FEATHERFALL", self.platform_state)
+end
+
+function Other_Player:cancelFollowerTweens() --cheat
+end
+
+function Other_Player:isPlatMovementEnabled() --cheat cheat
+    return true
+end
+
+function Other_Player:getFacing()
+    return self.facing or "left"
 end
 
 function Other_Player:isPlatforming()
-    return self.state_manager and self.state_manager.state == "FEATHERFALL"
+    if self.state == "FEATHERFALL" then return true end
+    return false
 end
 
 function Other_Player:getDebugInfo()
@@ -71,6 +87,8 @@ function Other_Player:update(...)
             self:faceTowards({ x = self.targetX, y = self.targetY })
         end
     end
+
+    self.state_manager:update()
 end
 
 
