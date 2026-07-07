@@ -136,6 +136,7 @@ function Server:sendUpdatesToClients()
                 x = player.x,
                 y = player.y,
                 actor = player.actor,
+                state = player.state,
                 sprite = player.sprite,
                 map = player.map
             }
@@ -180,6 +181,7 @@ function Server:sendBattleUpdatesToClients()
                 uuid = id,
                 username = player.username,
                 actor = player.actor,
+                state = player.state,
                 sprite = player.sprite,
                 health = player.health,
                 encounter = player.encounter, 
@@ -236,6 +238,7 @@ function Server:processClientMessage(client, data)
                 player.y = message.y
                 player.map = message.map or player.map
                 player.actor = message.actor
+                player.state = message.state
                 player.sprite = message.sprite
                 player.lastUpdate = love.timer.getTime()
                 player.state = "world"
@@ -301,178 +304,6 @@ function Server:processClientMessage(client, data)
                 username = sender.username,
                 message = message.message,
             })
-        end
-    elseif command == "battle" then
-        if subCommand == "update" then
-            local player = self:getPlayerFromClient(client)
-            if player then
-                player.username = message.username
-                player.encounter = message.encounter or player.encounter
-                player.actor = message.actor
-                player.sprite = message.sprite
-                player.lastUpdate = love.timer.getTime()
-                player.health = message.health
-                player.state = "battle"
-                player.location = message.location -- {x, y}
-
-                if not player.party_number then
-                    local bigger = 1
-                    for id, players in pairs(self.players) do
-                        if players.encounter == player.encounter and players.state == "battle" then
-                            if players.party_number and players.party_number >= bigger then
-                                bigger = players.party_number + 1
-                            end
-                        end
-                    end
-                    player.party_number = bigger
-
-                    local msg = {
-                        command = "set_party_number",
-                        party_number = bigger
-                    }
-                    self:sendClientMessage(player.client, msg)
-                end
-
-            end
-        elseif subCommand == "enemy" then
-            if subSubC == "hurt" then
-                local player = self:getPlayerFromClient(client)
-
-                if player then
-                    for _, players in pairs(self.players) do
-                        if player.uuid == players.uuid then
-                        elseif players.encounter == player.encounter and players.state == "battle" then
-                            self:sendClientMessage(players.client, {
-                                command = "enemy_update",
-                                subCommand = "hurt",
-                                index = message.index,
-                                amount = message.amount
-                            })
-                        end
-                    end
-                end
-            elseif subSubC == "mercy" then
-                local player = self:getPlayerFromClient(client)
-
-                if player then
-                    for _, players in pairs(self.players) do
-                        if player.uuid == players.uuid then
-                        elseif players.encounter == player.encounter and players.state == "battle" then
-                            self:sendClientMessage(players.client, {
-                                command = "enemy_update",
-                                subCommand = "mercy",
-                                index = message.index,
-                                amount = message.amount
-                            })
-                        end
-                    end
-                end
-            elseif subSubC == "spare" then
-                local player = self:getPlayerFromClient(client)
-
-                if player then
-                    for _, players in pairs(self.players) do
-                        if player.uuid == players.uuid then
-                        elseif players.encounter == player.encounter and players.state == "battle" then
-                            self:sendClientMessage(players.client, {
-                                command = "enemy_update",
-                                subCommand = "spare",
-                                index = message.index,
-                                extra = message.extra
-                            })
-                        end
-                    end
-                end
-            elseif subSubC == "onDefeatRun" then
-                local player = self:getPlayerFromClient(client)
-
-                if player then
-                    for _, players in pairs(self.players) do
-                        if player.uuid == players.uuid then
-                        elseif players.encounter == player.encounter and players.state == "battle" then
-                            self:sendClientMessage(players.client, {
-                                command = "enemy_update",
-                                subCommand = "onDefeatRun",
-                                index = message.index,
-                                amount = message.amount
-                            })
-                        end
-                    end
-                end
-            elseif subSubC == "onDefeatFatal" then
-                local player = self:getPlayerFromClient(client)
-
-                if player then
-                    for _, players in pairs(self.players) do
-                        if player.uuid == players.uuid then
-                        elseif players.encounter == player.encounter and players.state == "battle" then
-                            self:sendClientMessage(players.client, {
-                                command = "enemy_update",
-                                subCommand = "onDefeatFatal",
-                                index = message.index,
-                                amount = message.amount
-                            })
-                        end
-                    end
-                end
-            elseif subSubC == "freeze" then
-                local player = self:getPlayerFromClient(client)
-                if player then
-                    for _, players in pairs(self.players) do
-                        if player.uuid == players.uuid then
-                        elseif players.encounter == player.encounter and players.state == "battle" then
-                            self:sendClientMessage(players.client, {
-                                command = "enemy_update",
-                                subCommand = "freeze",
-                                index = message.index
-                            })
-                        end
-                    end
-                end
-                
-            end
-        elseif subCommand == "heal" then
-            local target = message.heal_who
-            
-            local player = self.players[message.heal_who]
-
-            local heal = {
-                command = "heal",
-                amount = message.amount
-            }
-            if player then
-                self:sendClientMessage(player.client, heal)
-            end
-        elseif subCommand == "inParty" then
-            local id = message.uuid
-            local clientPlayers = message.players
-            local player = self:getPlayerFromClient(client)
-
-            if player then
-                local actualMapPlayers = {}
-                for otherId, otherPlayer in pairs(self.players) do
-                    if otherPlayer.encounter == player.encounter and otherPlayer.state == "battle" then
-                        actualMapPlayers[otherId] = true
-                    end
-                end
-
-                -- Determine which players to remove
-                local playersToRemove = {}
-                for _, clientPlayer in ipairs(clientPlayers) do
-                    if not actualMapPlayers[clientPlayer] then
-                        table.insert(playersToRemove, clientPlayer)
-                    end
-                end
-
-                -- Send removal message if needed
-                if #playersToRemove > 0 then
-                    local removeMessage = {
-                        command = "remove_battlers",
-                        battlers = playersToRemove
-                    }
-                    self:sendClientMessage(player.client, removeMessage)
-                end
-            end
         end
     elseif command == "disconnect" then
         self.logger:info("Player " .. self:getPlayerFromClient(client).username .. " disconnected")

@@ -265,6 +265,7 @@ function Lib:updateBattle(batl, ...)
             command = "battle",
             subCommand = "update",
             actor = player.actor.id,
+            state = player.state,
             username = self.name,
             sprite = player.sprite.sprite_options[1],
             encounter = batl.encounter.id,
@@ -318,6 +319,7 @@ function Lib:updateWorld(...)
             y = player.y,
             map = (Mod.info.id..":"..Game.world.map.id) or "null",
             actor = player.actor.id,
+            state = player.state,
             sprite = sprite_val
         }
 
@@ -642,127 +644,6 @@ function Lib:parseServerData(data)
             Kristal.Console:log(Utils.dump(data))
         end
     end
-    -- TODO: Rewrite battles entirely. Why the heck do battles involve update, anyway?
-    --[[
-    if data then
-        if data.command == "battle_update" then
-            for _, playerData in ipairs(data.players) do
-                if playerData.uuid ~= self.uuid then
-                    local other_battler = self.other_battlers[playerData.uuid]
-
-                    if other_battler then
-                        other_battler.name = playerData.username
-
-                        if playerData.health then other_battler.health = playerData.health end
-                        if other_battler.actor.id ~= playerData.actor then
-                            local success, result = pcall(Other_Battler, playerData.actor, 0, 0, 0)
-                            if success then
-                                other_battler:setActor(playerData.actor)
-                            else
-                                other_battler:setActor("dummy")
-                            end
-                        end
-                        if other_battler.sprite.sprite_options[1] ~= playerData.sprite then
-                            other_battler:setSprite(playerData.sprite)
-                        end
-
-                        if playerData.location then
-                            other_battler.x = playerData.location[1]
-                            other_battler.y = playerData.location[2]
-                        end
-
-                        if playerData.party_number then
-                            other_battler.party_number = playerData.party_number
-                        end
-
-                    else
-                        local otherplr
-                        local success, result = pcall(Other_Battler, playerData.actor, 200, 200, playerData.username, playerData.uuid)
-                        if success then
-                            otherplr = result
-                        else
-                            otherplr = Other_Battler("dummy", 200, 200, playerData.username, playerData.uuid)
-                        end
-
-                        if playerData.encounter == batl.encounter.id then
-                            -- Create a new player if it doesn't exist while making sure It's on the right map
-                            other_battler = otherplr
-                            other_battler.layer = -100
-                            other_battler.encounterID = playerData.encounter
-                            Game.battle:addChild(other_battler)
-                            self.other_battlers[playerData.uuid] = other_battler
-
-                            if playerData.location then
-                                other_battler.x = playerData.location[1]
-                                other_battler.y = playerData.location[2]
-                            end
-                            if playerData.party_number then
-                                other_battler.party_number = playerData.party_number
-                                self:playerBattleLocation()
-                            end
-                        end
-                    end
-                end
-                
-            end
-        elseif data.command == "enemy_update" then
-            if data.subCommand == "mercy" then
-                local enemy = Game.battle.enemies[data.index]
-                if enemy then
-                    enemy:addMercy(data.amount, true)
-                end
-            elseif data.subCommand == "hurt" then
-                print(data.amount)
-                local enemy = Game.battle.enemies[data.index]
-                if enemy then
-                    enemy.message_hurt = true
-                    enemy:hurt(data.amount)
-                end
-            elseif data.subCommand == "spare" then
-                local enemy = Game.battle.enemies[data.index]
-                if enemy then
-                    enemy.message_spare = true
-                    enemy:spare(data.extra)
-                end
-            elseif data.subCommand == "onDefeatRun" then
-                local enemy = Game.battle.enemies[data.index]
-                if enemy then
-                    enemy.message_onDefeatRun = true
-                    enemy:onDefeatRun(data.amount)
-                end
-            elseif data.subCommand == "onDefeatFatal" then
-                local enemy = Game.battle.enemies[data.index]
-                if enemy then
-                    enemy.message_onDefeatFatal = true
-                    enemy:onDefeatFatal(data.amount)
-                end
-            elseif data.subCommand == "freeze" then
-                local enemy = Game.battle.enemies[data.index]
-                if enemy then
-                    enemy.message_freeze = true
-                    enemy:freeze()
-                end
-            end
-        elseif data.command == "heal" then
-            if data.amount < 0 then
-                batl.party[1]:hurt(-data.amount)
-            else
-                batl.party[1]:heal(data.amount)
-            end
-        elseif data.command == "remove_battlers" then
-            for _, uuid in ipairs(data.battlers) do
-                if self.other_battlers[uuid] then
-                    self.other_battlers[uuid].fadingOut = true
-                    self.other_battlers[uuid] = nil
-                    self:playerBattleLocation()
-                end
-            end
-        elseif data.command == "set_party_number" then
-            batl.party[1].party_number = data.party_number
-            self:playerBattleLocation()
-        end
-    end
-    --]]
 end
 
 local function getConnectionSprite()

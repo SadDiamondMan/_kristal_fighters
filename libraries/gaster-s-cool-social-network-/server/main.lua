@@ -52,6 +52,7 @@ function love.draw()
         elseif player.state == "world" and player.username and player.uuid and player.map and player.actor and player.x and player.y then
             line("Player: " .. player.username)
             line("UUID: " .. player.uuid)
+            line("State: " .. player.state)
             line("Actor: " .. player.actor)
             line("Sprite: " .. tostring(player.sprite or "NIL!!!!! WTF"))
             line("Map: " .. player.map)
