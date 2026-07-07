@@ -257,7 +257,7 @@ function Server:processClientMessage(client, data)
             if player then
                 local actualMapPlayers = {}
                 for otherId, otherPlayer in pairs(self.players) do
-                    if otherPlayer.map == player.map then
+                    if otherPlayer.map == player.map and otherPlayer.state == player.state then
                         actualMapPlayers[otherId] = true
                     end
                 end
