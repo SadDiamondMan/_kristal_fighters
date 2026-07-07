@@ -241,7 +241,6 @@ function Server:processClientMessage(client, data)
                 player.state = message.state
                 player.sprite = message.sprite
                 player.lastUpdate = love.timer.getTime()
-                player.state = "world"
 
                 if message.cust then
                     player.cust = message.cust

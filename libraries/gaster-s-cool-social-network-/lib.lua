@@ -303,11 +303,13 @@ function Lib:updateWorld(...)
 
     -- Throttle player position update packets
     if currentTime - lastUpdateTime >= THROTTLE_INTERVAL then
-        local sprite_val
+        local sprite_val = "party/kris/platform/idle_1"
 
         if player.sprite.anim then
             sprite_val = player.sprite.anim
-        else
+        elseif Game.world.player.state == "FEATHERFALL" then
+            sprite_val = "" ..Game.world.player.sprite.sprite.. "_" ..Game.world.player.sprite.frame.. ""
+        elseif Game.world.player.state ~= "FEATHERFALL" then
             sprite_val = player.sprite.sprite_options[1]
         end
 
@@ -319,8 +321,8 @@ function Lib:updateWorld(...)
             y = player.y,
             map = (Mod.info.id..":"..Game.world.map.id) or "null",
             actor = player.actor.id,
-            state = player.state,
-            sprite = sprite_val
+            sprite = sprite_val,
+            state = player.state
         }
 
         if type(sprite_val) == "table" then
