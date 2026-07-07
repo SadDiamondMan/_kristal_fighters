@@ -136,6 +136,7 @@ function Server:sendUpdatesToClients()
                 x = player.x,
                 y = player.y,
                 actor = player.actor,
+                facing = player.facing,
                 state = player.state,
                 sprite = player.sprite,
                 map = player.map

@@ -316,8 +316,8 @@ function Lib:updateWorld(...)
             command = "world",
             subCommand = "update",
             username = self.name,
-            x = math.floor(player.x),
-            y = math.floor(player.y),
+            x = player.x,
+            y = player.y,
             map = (Mod.info.id..":"..Game.world.map.id) or "null",
             actor = player.actor.id,
             sprite = sprite_val,
@@ -575,7 +575,7 @@ function Lib:parseServerData(data)
 
                         if other_player.state ~= playerData.state then other_player.state = playerData.state end
 
-                        if other_player.facing ~= playerData.facing then other_player.facing = playerData.facing end
+                        if playerData.facing and other_player.facing and other_player.facing ~= playerData.facing then other_player:setFacing(playerData.facing) end
                         
                         local dat = playerData.sprite
                         local Pspr = other_player.sprite

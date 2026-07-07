@@ -26,6 +26,7 @@ end
 function Other_Player:getDebugInfo()
     local info = super.getDebugInfo(self)
     table.insert(info, "player: " .. self.name)
+    table.insert(info, "facing: " .. self.facing)
     return info
 end
 
