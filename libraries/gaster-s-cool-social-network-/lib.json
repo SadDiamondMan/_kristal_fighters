@@ -1,0 +1,31 @@
+{
+    "id": "gasterscoolsocialnetwork",
+
+    "version": "v0.0.1",
+    "engineVer": "v0.9.0-dev",
+
+    "authors": [
+        "SadDiamondMan",
+        "Hyperboid 2: Hyper Boider",
+        "Various GitHub contributors"
+    ],
+    "config": {
+        "domain": "serveo.net",
+        "chat_format": "%s: %s",
+        "port": 25574
+    },
+    "keybinds": [
+        {
+            "name": "Chat",
+            "id": "gcsn_chat",
+            "keys": ["/"],
+            "gamepad": [],
+        },
+        {
+            "name": "Show player list",
+            "id": "gcsn_playerlist",
+            "keys": ["tab"],
+            "gamepad": ["select"],
+        },
+    ],
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Gaster's Cool Social Network",
+    "hidden": true,
+    "id": "gcsn",
+    "plugin": {
+        "name": "GCSN"
+    },
+    "keybinds": [
+        {
+            "name": "Chat",
+            "id": "gcsn_chat",
+            "keys": ["/"],
+            "gamepad": [],
+        },
+        {
+            "name": "Show player list",
+            "id": "gcsn_playerlist",
+            "keys": ["tab"],
+            "gamepad": ["select"],
+        },
+    ],
+}
