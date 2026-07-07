@@ -266,6 +266,7 @@ function Lib:updateBattle(batl, ...)
             subCommand = "update",
             actor = player.actor.id,
             state = player.state,
+            facing = player.facing,
             username = self.name,
             sprite = player.sprite.sprite_options[1],
             encounter = batl.encounter.id,
@@ -320,6 +321,7 @@ function Lib:updateWorld(...)
             map = (Mod.info.id..":"..Game.world.map.id) or "null",
             actor = player.actor.id,
             sprite = sprite_val,
+            facing = player.facing,
             state = player.state
         }
 
@@ -570,6 +572,10 @@ function Lib:parseServerData(data)
                                 other_player:setActor("dummy")
                             end
                         end
+
+                        if other_player.state ~= playerData.state then other_player.state = playerData.state end
+
+                        if other_player.facing ~= playerData.facing then other_player.facing = playerData.facing end
                         
                         local dat = playerData.sprite
                         local Pspr = other_player.sprite
@@ -577,8 +583,9 @@ function Lib:parseServerData(data)
                         local needs_update = ((Pspr.anim and Pspr.anim ~= dat) or (not Pspr.anim and Pspr.sprite_options[1] ~= dat)) and dat
 
                         if needs_update then
-                            other_player:setSprite(dat)
-                            other_player:setAnimation(dat)
+                          --  other_player:setSprite(dat)
+                        --else
+                            other_player.sprite:setTexture(dat)
                         end
 
                         if playerData.cust then --Sync custom data

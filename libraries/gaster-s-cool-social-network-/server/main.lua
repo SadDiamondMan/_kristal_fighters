@@ -41,12 +41,12 @@ function love.draw()
         yOffset = yOffset + 15
     end
     for _, player in pairs(server.players) do
-        if player.username and player.uuid and player.map and player.actor and player.x and player.y and player.state then
+        if player.username and player.uuid and player.map and player.actor and player.x and player.y and player.state and player.facing then
             line("Player: " .. player.username)
             line("UUID: " .. player.uuid)
             line("State: " .. player.state)
             line("Actor: " .. player.actor)
-            line("Sprite: " .. tostring(player.sprite or "NIL!!!!! WTF"))
+            line("Sprite: " .. tostring(player.sprite or "NIL!!!!! WTF") ..", Dir: ".. player.facing)
             line("Map: " .. player.map)
             line("X: " .. player.x .. ", Y: " .. player.y)
             yOffset = yOffset + 10

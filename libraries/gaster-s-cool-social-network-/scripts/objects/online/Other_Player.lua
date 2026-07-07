@@ -14,6 +14,13 @@ function Other_Player:init(chara, x, y, name, uuid)
     self.fadingOut = false
     self.nametag = UserNametag(self, self.name)
     self:addChild(self.nametag)
+
+    --self.platform_state = PlayerPlatformState(self)
+    --self.state_manager:addState("FEATHERFALL", self.platform_state)
+end
+
+function Other_Player:isPlatforming()
+    return self.state_manager and self.state_manager.state == "FEATHERFALL"
 end
 
 function Other_Player:getDebugInfo()

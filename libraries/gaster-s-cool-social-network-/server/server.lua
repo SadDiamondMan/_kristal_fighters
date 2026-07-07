@@ -184,6 +184,7 @@ function Server:sendBattleUpdatesToClients()
                 username = player.username,
                 actor = player.actor,
                 state = player.state,
+                facing = player.facing,
                 sprite = player.sprite,
                 health = player.health,
                 encounter = player.encounter, 
@@ -241,6 +242,7 @@ function Server:processClientMessage(client, data)
                 player.map = message.map or player.map
                 player.actor = message.actor
                 player.state = message.state
+                player.facing = message.facing
                 player.sprite = message.sprite
                 player.lastUpdate = love.timer.getTime()
 
