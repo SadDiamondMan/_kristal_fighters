@@ -29,9 +29,9 @@ function ChatInputBox:pushChatMessage(msg)
     --table.insert(self.chat_history, msg)
     local sender = msg.sender
 
-    if not GCSN.getConfig("danger_mode") then
+    --if not GCSN.getConfig("danger_mode") then
         sender = sender:gsub("%[", "[ ")
-    end
+    --end
     sender = GCSN:getSpecialName(sender)
     local text = string.format(GCSN.getConfig("chat_format"), sender) .. "[wave:0][color:reset][font:main_mono]" .. msg.content
     self:push(text)

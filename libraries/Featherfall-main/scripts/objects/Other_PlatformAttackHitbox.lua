@@ -211,6 +211,7 @@ function PlatformAttackHitbox:checkAttackables()
 
     local heart = Game.world.player.platform_state:getHeartCollider()
     if heart and self:collidesWith(heart) then
+        self.knockback = 75
         self.damage = 1
         Game.world.player.platform_state:onPlatformBulletHit(self)
     end
