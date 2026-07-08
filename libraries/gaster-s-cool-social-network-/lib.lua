@@ -586,7 +586,7 @@ function Lib:parseServerData(data)
                           other_player:setSprite(dat)
                         else
                             other_player.platform_state.facing = playerData.facing
-                            other_player.platform_state:setPlayerAnimation(dat) --sprite:setTexture(dat)
+                            other_player.platform_state:setPlayerAnimation_zero(dat) --sprite:setTexture(dat)
                         end
 
                         if playerData.cust then --Sync custom data

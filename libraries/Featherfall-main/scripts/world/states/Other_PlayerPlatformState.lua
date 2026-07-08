@@ -210,6 +210,17 @@ function PlayerPlatformState:setPlayerAnimation(name)
     return self:setPlatformAnimation(name)
 end
 
+function PlayerPlatformState:setPlayerAnimation_zero(name)
+    if name == self:getAttackAnimationName() then
+        self.attacking = true
+        self.attack_press_timer = 1
+        self:applyAttackAnimation()
+    else
+        self.attacking = false
+        self:setPlayerAnimation(name)
+    end
+end
+
 function PlayerPlatformState:syncFromEntity()
     if not self.entity then
         return
@@ -1579,7 +1590,8 @@ function PlayerPlatformState:spawnAttackHitbox()
     local animation_name = self:getAttackAnimationName()
     local animation = self:getPlatformAnimation(animation_name)
     if Game.world and animation then
-        Game.world:spawnObject(PlatformAttackHitbox(self.player, self.facing, animation, self.attack_hitbox, self.attack_frame, animation_name))
+        --PlatformAttackHitbox()
+        Game.world:spawnObject(Other_PlatformAttackHitbox(self.player, self.facing, animation, self.attack_hitbox, self.attack_frame, animation_name))
     end
 end
 
