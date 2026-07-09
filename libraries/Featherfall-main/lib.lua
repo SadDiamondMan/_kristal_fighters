@@ -592,6 +592,7 @@ function Featherfall:getActionTargets()
         local k = GCSN.other_players[event]
         Game.world.m = k
         if k.platform_action_target_event then
+            --local c = k.platform_state:getHeartCollider()
             table.insert(targets, k)
         end
     end

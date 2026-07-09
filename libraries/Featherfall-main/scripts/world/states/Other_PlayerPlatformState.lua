@@ -215,6 +215,11 @@ function PlayerPlatformState:setPlayerAnimation_zero(name)
         self.attacking = true
         self.attack_press_timer = 1
         self:applyAttackAnimation()
+    elseif name == self:getHurtAnimationName() then
+        self.hurt = true
+
+        self.hurt_timer = 7
+        self.hurt_counter = (self.hurt_counter or 0) + 1
     else
         self.attacking = false
         self:setPlayerAnimation(name)
@@ -1038,9 +1043,9 @@ function PlayerPlatformState:endTargetMode(select_target)
             self.entity.jumpbuffer = 0
         end
     elseif select_target and self.entity and self.player:isPlatMovementEnabled() then
-        if (Input.down("cancel") or Input.pressed("cancel")) and self.entity.constants then
-            self.entity.jumpbuffer = self.entity.constants.jumpbuffer or 4
-        end
+        --if (Input.down("cancel") or Input.pressed("cancel")) and self.entity.constants then
+          --  self.entity.jumpbuffer = self.entity.constants.jumpbuffer or 4
+        --end
     end
 end
 
@@ -1086,6 +1091,7 @@ end
 
 function PlayerPlatformState:getDirectionPressed()
     local dx, dy = 0, 0
+--[[
     if Input.pressed("right") then
         dx = 1
     elseif Input.pressed("left") then
@@ -1099,6 +1105,7 @@ function PlayerPlatformState:getDirectionPressed()
     if dx ~= 0 or dy ~= 0 then
         return dx, dy
     end
+]]
 end
 
 function PlayerPlatformState:chooseTargetInDirection(dx, dy)
@@ -1271,7 +1278,7 @@ function PlayerPlatformState:requestAction(target, data)
 end
 
 function PlayerPlatformState:updateTargetMode()
-    local menu_down = Input.down("menu")
+    local menu_down = false --Input.down("menu")
     self.act_button_held = menu_down
 
     local in_targetmode = menu_down and Featherfall.transition_timer <= 0 and self.fallen_in_pit == 0
@@ -1322,14 +1329,14 @@ function PlayerPlatformState:updateTargetMode()
         elseif #self.act_targets > 0 then
             self:setHoveredTarget(-1)
         end
-    elseif Input.pressed("cancel") and #self.act_targets > 0 then
-        self:setHoveredTarget(-1)
+    --elseif Input.pressed("cancel") and #self.act_targets > 0 then
+      --  self:setHoveredTarget(-1)
     end
 
     local target = self.act_targets[self.targetindex]
-    if Input.pressed("confirm") and target and target.button1_activated then
-        self:endTargetMode(true)
-    end
+    --if Input.pressed("confirm") and target and target.button1_activated then
+      --  self:endTargetMode(true)
+    --end
 
     return true
 end
@@ -1474,7 +1481,7 @@ function PlayerPlatformState:updateAttackInput()
         --self.attack_press_timer = 1
     --end
     self.press_attack = self.attack_press_timer > 0
-    self.key_attack = Input.down("confirm")
+    self.key_attack = false -- Input.down("confirm")
     self.attackbuffer = math.max(0, self.attackbuffer - DTMULT)
     if self.press_attack then
         self.attackbuffer = 4
@@ -2218,6 +2225,8 @@ function PlayerPlatformState:onUpdate()
             self:spawnDust(-1)
         end
     end
+
+--[[
     if Input.down("cancel") and grounded_attack then
         if self.entity then
             self.entity.jumpbuffer = 4
@@ -2229,6 +2238,7 @@ function PlayerPlatformState:onUpdate()
             self.attacking = false
         end
     end
+]]
     self:updateDashGate(move)
     if self.dash_transition_con > 0 then
         self:updateDashTransition()

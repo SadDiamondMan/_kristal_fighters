@@ -92,6 +92,10 @@ function Other_Player:update(...)
     end
     super.update(self, ...)
 
+
+    self.cx = self.x
+    self.cy = self.y - 25
+
     -- Check if this player is moving
     if self.targetX and self.targetY then
         local moved = self:moveTo(self.targetX, self.targetY, true)  -- Assuming moveTo updates movement
