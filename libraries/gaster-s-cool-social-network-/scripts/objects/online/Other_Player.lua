@@ -21,6 +21,24 @@ function Other_Player:init(chara, x, y, name, uuid)
 
     self.platform_state = PlayerPlatformState(self)
     self.state_manager:addState("FEATHERFALL", self.platform_state)
+    self.platform_action_target_event = true
+    self.platform_action_target = true
+    self.action_kind = "all"
+end
+
+function Other_Player:getActionPlatformState()
+    if not self.platform_action_target then
+        return
+    end
+    for _, follower in ipairs(Game.world and Game.world.followers or {}) do
+        local state = follower.platform_state
+        if state
+            and state.action_platform_target == self
+            and (state.action_platform_mode or 0) > 0
+        then
+            return state
+        end
+    end
 end
 
 function Other_Player:cancelFollowerTweens() --cheat

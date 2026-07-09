@@ -586,6 +586,18 @@ function Featherfall:getActionTargets()
             table.insert(targets, event)
         end
     end
+
+    if GCSN.other_players then
+    for event in pairs(GCSN.other_players) do
+        local k = GCSN.other_players[event]
+        Game.world.m = k
+        if k.platform_action_target_event then
+            table.insert(targets, k)
+        end
+    end
+    end
+
+
     return targets
 end
 
